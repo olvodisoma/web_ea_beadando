@@ -30,6 +30,7 @@
                     </header>
                     <ul>
                         <li><a href="{{ url('/') }}">Főoldal</a></li>
+                        <li><a href="{{ url('/kapcsolat') }}">Kapcsolat</a></li>
 
                         @auth
                             <li><a href="{{ url('/uzenetek') }}">Üzenetek</a></li>

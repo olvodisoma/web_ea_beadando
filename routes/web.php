@@ -6,6 +6,7 @@ use App\Http\Controllers\AdatbazisController;
 use App\Http\Controllers\DiakController;
 use App\Http\Controllers\TargyController;
 use App\Http\Controllers\JegyController;
+use App\Http\Controllers\KapcsolatController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,6 +46,9 @@ Route::middleware('auth')->group(function () {
 Route::get('/admin', function () {
     return view('admin');
 })->middleware(['auth', 'admin'])->name('admin');
+
+Route::get('/kapcsolat', [KapcsolatController::class, 'showForm'])->name('kapcsolat');
+Route::post('/kapcsolat', [KapcsolatController::class, 'submitForm'])->name('kapcsolat.submit');
 
 // Auth (Breeze generálta)
 require __DIR__.'/auth.php';
