@@ -34,6 +34,9 @@
                         @auth
                             <li><a href="{{ url('/uzenetek') }}">Üzenetek</a></li>
 
+                            <!-- 🧩 ÚJ MENÜPONT: Adatbázis -->
+                            <li><a href="{{ route('adatbazis') }}">Adatbázis</a></li>
+
                             @if(auth()->user()->role === 'admin')
                                 <li><a href="{{ url('/admin') }}">Admin</a></li>
                             @endif
