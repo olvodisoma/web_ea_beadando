@@ -51,7 +51,10 @@
             Intézményünk a modern oktatást és a digitális eszközhasználatot támogatja, ezért fejlesztettük ki ezt az elektronikus naplót.
             A rendszer lehetővé teszi a jegyek, tárgyak és tanulók egyszerű, átlátható kezelését.
         </p>
-        <img src="{{ asset('assets/images/pic01.jpg') }}" alt="Iskola épülete" style="max-width:100%; border-radius:10px;">
+        <img src="{{ asset('assets/images/pic01.jpg') }}" alt="Iskola épülete" 
+        style="max-width:100%; border-radius:15px; box-shadow: 0 4px 20px rgba(0,0,0,0.2); transition: transform 0.3s;"
+        onmouseover="this.style.transform='scale(1.03)'"
+        onmouseout="this.style.transform='scale(1)'">
     </section>
 @endsection
 
