@@ -30,10 +30,26 @@
                     </header>
                     <ul>
                         <li><a href="{{ url('/') }}">Főoldal</a></li>
-                        <li><a href="{{ url('/diak') }}">Diákok</a></li>
-                        <li><a href="{{ url('/targy') }}">Tantárgyak</a></li>
-                        <li><a href="{{ url('/jegy') }}">Jegyek</a></li>
-                        <li><a href="{{ url('/kapcsolat') }}">Kapcsolat</a></li>
+
+                        @auth
+                            <li><a href="{{ url('/uzenetek') }}">Üzenetek</a></li>
+
+                            @if(auth()->user()->role === 'admin')
+                                <li><a href="{{ url('/admin') }}">Admin</a></li>
+                            @endif
+
+                            <li>
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                                    <button type="submit" style="background:none;border:none;color:#fff;cursor:pointer;">
+                                        Kijelentkezés
+                                    </button>
+                                </form>
+                            </li>
+                        @else
+                            <li><a href="{{ route('login') }}">Bejelentkezés</a></li>
+                            <li><a href="{{ route('register') }}">Regisztráció</a></li>
+                        @endauth
                     </ul>
                 </nav>
 
