@@ -38,9 +38,8 @@
                             <li><a href="{{ route('diakok.index') }}">CRUD – Diákok</a></li>
                            
                             <li><a href="{{ route('adatbazis') }}">Adatbázis</a></li>
-
                             @if(auth()->user()->role === 'admin')
-                                <li><a href="{{ url('/admin') }}">Admin</a></li>
+                            <li><a href="{{ route('admin') }}">Admin</a></li>
                             @endif
 
                             <li>

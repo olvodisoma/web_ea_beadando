@@ -46,6 +46,11 @@ Route::middleware('auth')->group(function () {
     Route::resource('diakok', \App\Http\Controllers\DiakCrudController::class)->parameters([
         'diakok' => 'diak'
     ]);
+    Route::middleware(['auth','admin'])->group(function () {
+    Route::get('/admin', function () {
+        return view('admin.index');
+    })->name('admin');
+});
 });
 });
 
