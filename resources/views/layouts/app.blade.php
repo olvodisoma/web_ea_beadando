@@ -33,9 +33,10 @@
                         <li><a href="{{ url('/kapcsolat') }}">Kapcsolat</a></li>
 
                         @auth
-                            <li><a href="{{ url('/uzenetek') }}">Üzenetek</a></li>
+                            <li><a href="{{ route('diagram') }}">Diagram</a></li>
+                            <li><a href="{{ route('uzenetek')  }}">Üzenetek</a></li>
 
-                            <!-- 🧩 ÚJ MENÜPONT: Adatbázis -->
+                           
                             <li><a href="{{ route('adatbazis') }}">Adatbázis</a></li>
 
                             @if(auth()->user()->role === 'admin')

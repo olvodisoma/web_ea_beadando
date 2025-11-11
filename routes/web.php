@@ -30,9 +30,8 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::get('/uzenetek', function () {
-        return view('uzenetek');
-    })->name('uzenetek');
+        Route::get('/uzenetek', [App\Http\Controllers\UzenetController::class, 'index'])
+        ->name('uzenetek');
 
     Route::get('/adatbazis', [AdatbazisController::class, 'index'])->name('adatbazis');
 
@@ -40,6 +39,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/diak', [DiakController::class, 'index'])->name('diak');
     Route::get('/targy', [TargyController::class, 'index'])->name('targy');
     Route::get('/jegy', [JegyController::class, 'index'])->name('jegy');
+    Route::get('/diagram', [\App\Http\Controllers\DiagramController::class, 'index'])
+    ->middleware('auth')
+    ->name('diagram');
 });
 
 // Admin oldal (csak admin middleware-rel)
