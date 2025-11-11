@@ -42,9 +42,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/diagram', [\App\Http\Controllers\DiagramController::class, 'index'])
     ->middleware('auth')
     ->name('diagram');
-        Route::resource('diakok', DiakCrudController::class)->parameters([
+    Route::middleware('auth')->group(function () {
+    Route::resource('diakok', \App\Http\Controllers\DiakCrudController::class)->parameters([
         'diakok' => 'diak'
     ]);
+});
 });
 
 // Admin oldal (csak admin middleware-rel)

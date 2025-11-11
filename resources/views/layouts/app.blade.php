@@ -35,7 +35,7 @@
                         @auth
                             <li><a href="{{ route('diagram') }}">Diagram</a></li>
                             <li><a href="{{ route('uzenetek')  }}">Üzenetek</a></li>
-
+                            <li><a href="{{ route('diakok.index') }}">CRUD – Diákok</a></li>
                            
                             <li><a href="{{ route('adatbazis') }}">Adatbázis</a></li>
 
